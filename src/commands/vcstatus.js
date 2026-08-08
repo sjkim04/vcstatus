@@ -1,7 +1,8 @@
 import {
     ApplicationCommandOptionType,
     ChannelType,
-    InteractionResponseType
+    InteractionResponseType,
+    MessageFlags
 } from 'discord-api-types/v10';
 
 export default {
@@ -37,7 +38,8 @@ export default {
         return {
             type: InteractionResponseType.ChannelMessageWithSource,
             data: {
-                content: response
+                content: response,
+                flags: MessageFlags.Ephemeral
             },
         }
     }
