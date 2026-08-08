@@ -29,7 +29,7 @@ export default {
         const channelId = interaction.data.options?.[0].value;
         const status = interaction.data.options?.[1].value || null;
 
-        await discord.patch(`/channels/${channelId}/voice-status`, {
+        await discord.put(`/channels/${channelId}/voice-status`, {
             status
         });
 
