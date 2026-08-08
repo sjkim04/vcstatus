@@ -1,0 +1,6 @@
+name = "discord-workers-template"
+main = "src/index.js"
+compatibility_date = "2023-12-18"
+
+[build]
+command = "npm run prebuild"
