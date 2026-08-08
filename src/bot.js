@@ -3,7 +3,6 @@ import {
     InteractionResponseType
 } from 'discord-api-types/v10';
 import axios from 'axios';
-import axiosFetchAdapter from '@vespaiach/axios-fetch-adapter';
 
 import { commands } from './commands';
 import { verify } from './verify';
@@ -22,7 +21,7 @@ export async function bot(request, env, ctx) {
         headers: {
             Authorization: `Bot ${env.DISCORD_TOKEN}`
         },
-        adapter: axiosFetchAdapter
+        adapter: 'fetch'
     });
 
     if(!await verify(request, env)) return new Response('Invalid signature', { status: 401 });
